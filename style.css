@@ -1,0 +1,122 @@
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1c1c1e;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  }
+
+  .calculator {
+    width: 350px;
+    background: #1c1c1e;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 30px 80px rgba(0,0,0,0.8),
+      0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  .display {
+    padding: 12px 8px 8px;
+    text-align: right;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2px;
+  }
+
+  .expression {
+    font-size: 20px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+    letter-spacing: -0.3px;
+    min-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .result {
+    font-size: 72px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: -3px;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: font-size 0.1s ease;
+  }
+
+  .result.small { font-size: 52px; letter-spacing: -2px; }
+  .result.smaller { font-size: 38px; letter-spacing: -1px; }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  button {
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: filter 0.08s ease, transform 0.08s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    font-family: inherit;
+  }
+
+  button:active {
+    filter: brightness(1.35);
+    transform: scale(0.94);
+  }
+
+  /* Gray buttons (top row functions) */
+  .btn-gray {
+    background: #a5a5a5;
+    color: #1c1c1e;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  /* Orange operator buttons */
+  .btn-orange {
+    background: #ff9f0a;
+    color: #fff;
+  }
+
+  .btn-orange.active {
+    background: #fff;
+    color: #ff9f0a;
+  }
+
+  /* Dark number buttons */
+  .btn-dark {
+    background: #333335;
+    color: #fff;
+  }
+
+  /* Zero button spans 2 columns */
+  .btn-zero {
+    border-radius: 32px;
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 26px;
+    font-size: 28px;
+  }
+
+  /* Subtle hover state */
+  button:hover {
+    filter: brightness(1.1);
+  }
